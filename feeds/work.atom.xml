@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChinaGeology</title><link href="/" rel="alternate"></link><link href="/feeds/work.atom.xml" rel="self"></link><id>/</id><updated>2017-04-06T00:00:00+08:00</updated><entry><title>CIPW</title><link href="/cipw.html" rel="alternate"></link><published>2017-04-06T00:00:00+08:00</published><author><name>cycleuser</name></author><id>tag:,2017-04-06:cipw.html</id><summary type="html">&lt;h1&gt;关于 CIPW 计算&lt;/h1&gt;
+&lt;p&gt;CIPW 的设计初衷真不错，而且在那么久之前就有这种程序化的一步一步来拼的思路，很适合编程实现。&lt;/p&gt;
+&lt;p&gt;不过目前来看，国外流传比较广的计算表格是&lt;a href="http://minerva.union.edu/hollochk/kth/"&gt;美国联合学院的Kurt Hollocher&lt;/a&gt;这位老兄的，下载地址在&lt;a href="https://pan.baidu.com/s/1skN5ugd"&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;他的这个 Excel 表格做的非常细致，每一步都很清晰，不过其中有两处标注出了错，但我检查过，应该是不影响计算的。实际上我就是把他的表格中的算法抽了出来重新实现了，又加了批量计算的几个循环体。&lt;/p&gt;
+&lt;p&gt;国内估计用的比较多的是路远发老师的GeoKit进行计算，但是路老师的计算过程，如果按照&lt;a href="geokit.net/CIPW.htm"&gt;他的网站上面的流程&lt;/a&gt;，似乎和 Kurt 的有所差别，尤其是在 Sr 和 Ni 等元素的处理上，步骤完全不一样。&lt;/p&gt;
+&lt;p&gt;Kurt 的这个表格是 Leon Bagas 分享给我的，他个人推荐用这个，目前我也暂时先用这个来计算了。&lt;/p&gt;
+&lt;p&gt;我的 &lt;a href="https://github.com/chinageology/GeoPython"&gt;GeoPython&lt;/a&gt;  里面还是选择了用 Kurt 的计算思路，因为其中的计算流程更清晰一些。&lt;/p&gt;
+&lt;p&gt;在计算结果上，我在 &lt;a href="https://github.com/chinageology/GeoPython"&gt;GeoPython&lt;/a&gt;  里面使用了 ChemPy 来获取元素的原子量以及各种矿物的分子量，而 Kurt 原版是选择了小数点后两位小数的近似值。所以 GeoPython 里面用的原子量和分子量可能会更精确一些，这在 CIPW 计算结果上会体现在个位数的偶尔差异，以及小数点后数值的明显差异。 ChemPy 是一个化学方面的 Python 模块，我比较推荐使用；而 Kurt 的计算表格中由于使用了 Excel 等原因，数位有所取舍。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/chinageology/GeoPython"&gt;GeoPython&lt;/a&gt; 的 CIPW 模块是这样设计的：数据输入用一个 CIPW.xlsx 或者 CIPW.csv，其中一定要注意的是单位问题，Sr、Ba、Ni、Cr、Zr 这几个元素用的是 ppm，而其他的项目都是质量百分比。&lt;/p&gt;
+&lt;p&gt;计算出来的结果用额外的文件来存储。生成的四个 csv 文件，Claced 的是计算出来的各种岩石参数，比如 DI 值、 Mg# 等等；Result 是计算出来的摩尔数，也就是直接的结算结果；Volume 和 Weight 分别是转成 体积分数和质量分数的结果。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/chinageology/GeoPython/blob/master/Download.md"&gt;下载链接请点击这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其实不太推荐大家用打包好的 exe 或者 app，而更推荐从 pip 上面来安装 GeoPython，因为每次最新的版本都会首先更新到 pip 上面去，另外打包的版本由于要包含 Python 解释器以及所有依赖包，体积很大，Windows 版本接近 200MB， OSX 版本更是有 800MB 之大。&lt;/p&gt;
+&lt;p&gt;当然如果没有 Python 使用经验的话，暂时只能下载打包好的程序了。&lt;/p&gt;
+&lt;p&gt;我非常鼓励地学同行们一起来学习和使用 Python，我们不必要非常精通，只要能用 Python 来解决一些日常的问题就可以了。&lt;/p&gt;</summary><category term="GeoPython"></category><category term="Python"></category></entry></feed>
